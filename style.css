@@ -1,6 +1,6 @@
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-family: sans-serif;
+  font-size: 18px;
   line-height: 1;
 }
 
@@ -8,7 +8,7 @@ textarea {
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
+  color: #1a1919;
   border-left: 1px solid black;
   padding: 10px;
 }
@@ -16,23 +16,23 @@ textarea {
 .jumbotron {
   text-align: center;
   background-color: transparent;
-  color: black;
+  color: rgb(20, 19, 19);
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border-bottom: 10px solid rgb(13, 12, 12);
 }
 
-.description {
+.state {
   white-space: pre-wrap;
 }
 
 .time-block {
   text-align: center;
-  border-radius: 15px;
+  border-radius: 12px;
 }
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
+  height: 78px;
   border-top: 1px solid white;
 }
 
@@ -42,30 +42,30 @@ textarea {
   border-top: 1px dashed #000000;
 }
 
-.past {
+.prev {
   background-color: #d3d3d3;
   color: white;
 }
 
-.present {
-  background-color: #ff6961;
+.curr {
+  background-color: #ea5d56;
   color: white;
 }
 
-.future {
-  background-color: #77dd77;
+.next {
+  background-color: #69c069;
   color: white;
 }
 
-.saveBtn {
+.btnSave {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
+  background-color: #058caa;
   color: white;
 }
 
-.saveBtn i:hover {
+.btnSave i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }

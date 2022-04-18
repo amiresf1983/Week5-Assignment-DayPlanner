@@ -1,4 +1,4 @@
-var myDay = [
+let day = [
   {
     id: "0",
     hour: "09",
@@ -64,85 +64,79 @@ var myDay = [
   },
 ];
 
-function getHeaderDate() {
-  var currentHeaderDate = moment().format("dddd, MMMM Do");
-  $("#currentDay").text(currentHeaderDate);
+function getDateHead() {
+  let todayHeader = moment().format("dddd, Do MMMM YYYY");
+  $("#dayNow").text(todayHeader);
 }
 
-function saveReminders() {
-  localStorage.setItem("myDay", JSON.stringify(myDay));
+function saveTask() {
+  localStorage.setItem("day", JSON.stringify(day));
 }
 
-function displayReminders() {
-  myDay.forEach(function (_thisHour) {
+function displayTask() {
+  day.forEach(function (_thisHour) {
     $(`#${_thisHour.id}`).val(_thisHour.reminder);
   });
 }
 
 function init() {
-  var storedDay = JSON.parse(localStorage.getItem("myDay"));
+  let storedDay = JSON.parse(localStorage.getItem("day"));
 
   if (storedDay) {
-    myDay = storedDay;
+    day = storedDay;
   }
 
-  saveReminders();
-  displayReminders();
+  saveTask();
+  displayTask();
 }
 
-getHeaderDate();
+getDateHead();
 
-myDay.forEach(function (thisHour) {
-  var hourRow = $("<form>").attr({
+day.forEach(function (thisHour) {
+  let rowHour = $("<form>").attr({
     class: "row",
   });
-  $(".container").append(hourRow);
+  $(".container").append(rowHour);
 
-  var hourField = $("<div>").text(`${thisHour.hour}${thisHour.meridiem}`).attr({
+  let fieldHour = $("<div>").text(`${thisHour.hour}${thisHour.meridiem}`).attr({
     class: "col-md-2 hour",
   });
 
-  var hourPlan = $("<div>").attr({
-    class: "col-md-9 description p-0",
+  let planHour = $("<div>").attr({
+    class: "col-md-9 state p-0",
   });
-  var planData = $("<textarea>");
-  hourPlan.append(planData);
+  let planData = $("<textarea>");
+  planHour.append(planData);
   planData.attr("id", thisHour.id);
   if (thisHour.time < moment().format("HH")) {
     planData.attr({
-      class: "past",
+      class: "prev",
     });
   } else if (thisHour.time === moment().format("HH")) {
     planData.attr({
-      class: "present",
+      class: "curr",
     });
   } else if (thisHour.time > moment().format("HH")) {
     planData.attr({
-      class: "future",
+      class: "next",
     });
   }
 
-  var saveButton = $("<i class='far fa-save fa-lg'></i>");
-  var savePlan = $("<button>").attr({
-    class: "col-md-1 saveBtn",
+  let saveButton = $("<i class='far fa-save fa-lg'></i>");
+  let savePlan = $("<button>").attr({
+    class: "col-md-1 btnSave",
   });
   savePlan.append(saveButton);
-  hourRow.append(hourField, hourPlan, savePlan);
+  rowHour.append(fieldHour, planHour, savePlan);
 });
 
 init();
 
-$(".saveBtn").on("click", function (event) {
+$(".btnSave").on("click", function (event) {
   event.preventDefault();
-  var saveIndex = $(this)
-    .siblings(".description")
-    .children(".future")
-    .attr("id");
-  myDay[saveIndex].reminder = $(this)
-    .siblings(".description")
-    .children(".future")
-    .val();
+  let saveIndex = $(this).siblings(".state").children(".next").attr("id");
+  day[saveIndex].reminder = $(this).siblings(".state").children(".next").val();
   console.log(saveIndex);
-  saveReminders();
-  displayReminders();
+  saveTask();
+  displayTask();
 });

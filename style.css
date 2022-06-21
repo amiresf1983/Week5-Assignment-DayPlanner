@@ -1,71 +1,39 @@
 body {
+  font-size: 14px;
   font-family: sans-serif;
-  font-size: 18px;
-  line-height: 1;
+  line-height: 2;
 }
-
+.slot {
+  padding-top: 10px;
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+}
 textarea {
   background: transparent;
   border: none;
-  resize: none;
-  color: #1a1919;
-  border-left: 1px solid black;
-  padding: 10px;
+  color: black;
+  padding: 12px;
 }
 
+.before {
+  color: black;
+  background-color: rgb(190, 181, 181);
+}
+
+.now {
+  color: black;
+  background-color: pink;
+}
+
+.after {
+  color: black;
+  background-color: rgb(216, 240, 180);
+}
 .jumbotron {
   text-align: center;
   background-color: transparent;
-  color: rgb(20, 19, 19);
-  border-radius: 0;
-  border-bottom: 10px solid rgb(13, 12, 12);
-}
+  color: black;
 
-.state {
-  white-space: pre-wrap;
-}
-
-.time-block {
-  text-align: center;
-  border-radius: 12px;
-}
-
-.row {
-  white-space: pre-wrap;
-  height: 78px;
-  border-top: 1px solid white;
-}
-
-.hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
-}
-
-.prev {
-  background-color: #d3d3d3;
-  color: white;
-}
-
-.curr {
-  background-color: #ea5d56;
-  color: white;
-}
-
-.next {
-  background-color: #69c069;
-  color: white;
-}
-
-.btnSave {
-  border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #058caa;
-  color: white;
-}
-
-.btnSave i:hover {
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
+  border-bottom: 10px solid black;
 }

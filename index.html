@@ -3,32 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
+
+    <!-- googleAPI fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <!-- linking fontawesome -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <!-- linking bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <!-- linking css file -->
+    <link rel="stylesheet" href="./style.css" />
+
     <title>Day Planner</title>
   </head>
 
   <body>
     <header class="jumbotron">
       <h1 class="display-3">Day Planner</h1>
-      <p class="lead">Plan Your Tasks!</p>
-      <p id="dayNow" class="lead"></p>
+      <p class="lead">Schedule Your Day!</p>
+      <p id="today" class="lead"></p>
     </header>
-    <div class="container"></div>
+
+    <main>
+      <div class="container"></div>
+    </main>
+    <!-- linking momentJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- linking Jquery  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!-- linking JS file -->
     <script src="./script.js"></script>
   </body>
 </html>
